@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hk-statarb"
+version = "0.1.0"
+description = "HCCT Group – Hong Kong statistical arbitrage: cointegration pairs, Kalman hedge ratios and A/H-share premium mean reversion."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Harry CHU", email = "257962672+hcctbusiness@users.noreply.github.com" }]
+maintainers = [{ name = "HCCT Group" }]
+keywords = ["quant", "statistical arbitrage", "pairs trading", "cointegration", "kalman filter", "hong kong", "A/H premium"]
+dependencies = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "matplotlib>=3.7",
+  "statsmodels>=0.14",
+  "quantcore[data] @ git+https://github.com/hcctbusiness/QuantCore.git",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/hcctbusiness/HK-Stat-Arb"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
